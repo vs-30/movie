@@ -4,9 +4,13 @@
     <xs:element name="Movie">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="movieId" type="xs:string"/>
                 <xs:element name="title" type="xs:string"/>
-                <xs:element name="genre" type="xs:string"/>
-                <xs:element name="rating" type="xs:int"/>
+                <xs:element name="genreIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="rating" type="xs:float"/>
+                <xs:element name="overview" type="xs:string"/>
+                <xs:element name="posterPath" type="xs:string"/>
+                <xs:element name="releaseDate" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
