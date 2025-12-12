@@ -13,8 +13,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
-
+    implementation("org.springframework.boot:spring-boot-starter") // core Spring Boot
+    implementation("org.springframework.boot:spring-boot-starter-web") // REST controllers
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb") // MongoDB
+    implementation("com.fasterxml.jackson.core:jackson-databind") // JSON mapping
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // JAXB / XJC for XML
     implementation "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
     implementation "org.glassfish.jaxb:jaxb-runtime:4.0.1"
     xjc "org.glassfish.jaxb:jaxb-xjc:4.0.1"
@@ -30,7 +34,7 @@ java {
 
 xjc {
     xsdDir.set(file("src/main/resources/xsd"))
-    includes.set(["movie.xsd","user.xsd"])
+    includes.set(["movie.xsd","user.xsd","community.xsd","genre.xsd","likedMovies.xsd","recommendation.xsd"])
     outputJavaDir.set(file("src/main/generated"))
     defaultPackage.set("com.example.movie")
     markGenerated.set(true)

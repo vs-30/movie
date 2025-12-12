@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Community">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="communityId" type="xs:string"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="isPrivate" type="xs:boolean"/>
+                <xs:element name="joinLink" type="xs:string" minOccurs="0"/>
+                <xs:element name="memberIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="favouriteMovieIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="mostLikedMovieId" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

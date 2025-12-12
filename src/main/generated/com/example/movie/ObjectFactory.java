@@ -20,7 +20,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * 
  */
 @XmlRegistry
-@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-10T19:55:49+05:30")
+@Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
 public class ObjectFactory {
 
 
@@ -32,6 +32,36 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Community }
+     * 
+     * @return
+     *     the new instance of {@link Community }
+     */
+    public Community createCommunity() {
+        return new Community();
+    }
+
+    /**
+     * Create an instance of {@link Genre }
+     * 
+     * @return
+     *     the new instance of {@link Genre }
+     */
+    public Genre createGenre() {
+        return new Genre();
+    }
+
+    /**
+     * Create an instance of {@link LikedMovie }
+     * 
+     * @return
+     *     the new instance of {@link LikedMovie }
+     */
+    public LikedMovie createLikedMovie() {
+        return new LikedMovie();
+    }
+
+    /**
      * Create an instance of {@link Movie }
      * 
      * @return
@@ -39,6 +69,16 @@ public class ObjectFactory {
      */
     public Movie createMovie() {
         return new Movie();
+    }
+
+    /**
+     * Create an instance of {@link Recommendation }
+     * 
+     * @return
+     *     the new instance of {@link Recommendation }
+     */
+    public Recommendation createRecommendation() {
+        return new Recommendation();
     }
 
     /**

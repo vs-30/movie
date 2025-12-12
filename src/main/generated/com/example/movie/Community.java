@@ -21,13 +21,14 @@ import jakarta.xml.bind.annotation.XmlType;
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <element name="userId" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="communityId" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="isPrivate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="joinLink" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="memberIds" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         <element name="favouriteMovieIds" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="selectedMovieIds" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="joinedCommunityIds" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="mostLikedMovieId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -38,39 +39,41 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userId",
-    "username",
-    "email",
-    "password",
+    "communityId",
+    "name",
+    "description",
+    "isPrivate",
+    "joinLink",
+    "memberIds",
     "favouriteMovieIds",
-    "selectedMovieIds",
-    "joinedCommunityIds"
+    "mostLikedMovieId"
 })
-@XmlRootElement(name = "User")
+@XmlRootElement(name = "Community")
 @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-public class User {
+public class Community {
 
     @XmlElement(required = true)
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected String userId;
+    protected String communityId;
     @XmlElement(required = true)
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected String username;
+    protected String name;
     @XmlElement(required = true)
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected String email;
-    @XmlElement(required = true)
+    protected String description;
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected String password;
+    protected boolean isPrivate;
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
+    protected String joinLink;
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
+    protected List<String> memberIds;
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
     protected List<String> favouriteMovieIds;
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected List<String> selectedMovieIds;
-    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    protected List<String> joinedCommunityIds;
+    protected String mostLikedMovieId;
 
     /**
-     * Gets the value of the userId property.
+     * Gets the value of the communityId property.
      * 
      * @return
      *     possible object is
@@ -78,12 +81,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public String getUserId() {
-        return userId;
+    public String getCommunityId() {
+        return communityId;
     }
 
     /**
-     * Sets the value of the userId property.
+     * Sets the value of the communityId property.
      * 
      * @param value
      *     allowed object is
@@ -91,12 +94,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public void setUserId(String value) {
-        this.userId = value;
+    public void setCommunityId(String value) {
+        this.communityId = value;
     }
 
     /**
-     * Gets the value of the username property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -104,12 +107,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the username property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -117,12 +120,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public void setUsername(String value) {
-        this.username = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Gets the value of the email property.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -130,12 +133,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * Sets the value of the email property.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -143,12 +146,30 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public void setEmail(String value) {
-        this.email = value;
+    public void setDescription(String value) {
+        this.description = value;
     }
 
     /**
-     * Gets the value of the password property.
+     * Gets the value of the isPrivate property.
+     * 
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
+    public boolean isIsPrivate() {
+        return isPrivate;
+    }
+
+    /**
+     * Sets the value of the isPrivate property.
+     * 
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
+    public void setIsPrivate(boolean value) {
+        this.isPrivate = value;
+    }
+
+    /**
+     * Gets the value of the joinLink property.
      * 
      * @return
      *     possible object is
@@ -156,12 +177,12 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public String getPassword() {
-        return password;
+    public String getJoinLink() {
+        return joinLink;
     }
 
     /**
-     * Sets the value of the password property.
+     * Sets the value of the joinLink property.
      * 
      * @param value
      *     allowed object is
@@ -169,8 +190,40 @@ public class User {
      *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public void setPassword(String value) {
-        this.password = value;
+    public void setJoinLink(String value) {
+        this.joinLink = value;
+    }
+
+    /**
+     * Gets the value of the memberIds property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the memberIds property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getMemberIds().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     * @return
+     *     The value of the memberIds property.
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
+    public List<String> getMemberIds() {
+        if (memberIds == null) {
+            memberIds = new ArrayList<>();
+        }
+        return this.memberIds;
     }
 
     /**
@@ -206,67 +259,29 @@ public class User {
     }
 
     /**
-     * Gets the value of the selectedMovieIds property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the selectedMovieIds property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSelectedMovieIds().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
+     * Gets the value of the mostLikedMovieId property.
      * 
      * @return
-     *     The value of the selectedMovieIds property.
+     *     possible object is
+     *     {@link String }
+     *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public List<String> getSelectedMovieIds() {
-        if (selectedMovieIds == null) {
-            selectedMovieIds = new ArrayList<>();
-        }
-        return this.selectedMovieIds;
+    public String getMostLikedMovieId() {
+        return mostLikedMovieId;
     }
 
     /**
-     * Gets the value of the joinedCommunityIds property.
+     * Sets the value of the mostLikedMovieId property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the joinedCommunityIds property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJoinedCommunityIds().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     * @return
-     *     The value of the joinedCommunityIds property.
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v4.0.1", date = "2025-12-12T13:13:00+05:30")
-    public List<String> getJoinedCommunityIds() {
-        if (joinedCommunityIds == null) {
-            joinedCommunityIds = new ArrayList<>();
-        }
-        return this.joinedCommunityIds;
+    public void setMostLikedMovieId(String value) {
+        this.mostLikedMovieId = value;
     }
 
 }
